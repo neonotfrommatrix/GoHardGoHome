@@ -8,11 +8,11 @@ def main():
   board_size = 9
   game = goboard.GameState.new_game(board_size)
   bots = {
-    gotypes.Player.black: agent.naive.RandomBot(),
+    gotypes.Player.black: agent.base.Agent(),
     gotypes.Player.white: agent.naive.RandomBot(),
   }
   while not game.is_over():
-    time.sleep(0.1)
+    time.sleep(0.5)
     print(chr(27) + "[2J")
     print_board(game.board)
     bot_move = bots[game.next_player].select_move(game)
