@@ -12,7 +12,7 @@ def main():
     gotypes.Player.white: agent.naive.RandomBot(),
   }
   while not game.is_over():
-    time.sleep(0.3)
+    time.sleep(0.1)
     print(chr(27) + "[2J")
     print_board(game.board)
     bot_move = bots[game.next_player].select_move(game)
